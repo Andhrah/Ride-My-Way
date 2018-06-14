@@ -17,13 +17,13 @@
       <h2>Ride My Way</h2>
     </div>
     <ul>
-      <li class="current">
+      <li>
         <a href="index.html">Home</a>
       </li>
       <li>
         <a href="#">About Us</a>
       </li>
-      <li>
+      <li class="current">
         <a href="signup.html">Sign Up</a>
       </li>
       <li>
@@ -31,12 +31,43 @@
       </li>
     </ul>
   </nav>
-  
+<div class="wrapper">
+  <div class="info">
+    <form>
+      <h1> Sign up </h1>
+      <div class="input-container">
+        <label for="username">Full Name</label>
+        <input id="username" name="username" required="required" type="text" placeholder="Jane Doe" />
+      </div>
+      <div class="input-container">
+        <label for="emailsignup">Email</label>
+        <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mymail@mail.com" />
+      </div>
+      <div class="input-container">
+        <label for="passwordsignup">Password</label>
+        <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO" />
+      </div>
+      <div class="input-container">
+        <label for="passwordsignup_confirm">Confirm Password</label>
+        <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"
+        />
+      </div>
+      <div class="signin button">
+        <input type="submit" value="Sign Up" />
+      </div>
+      <div class="change_link">
+        Already a member ?
+        <a href="signin.html">Log in </a>
+      </div>
+    </form>
+  </div>
+</div>
+
+
   <footer>
     <p>
       Ride My Way, Copyright &copy; 2018
     </p>
   </footer>
 </body>
-
 </html>
