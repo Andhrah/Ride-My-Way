@@ -6,6 +6,8 @@ html, body {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
   font-family: 'Open Sans Condensed', sans-serif;
@@ -238,8 +240,66 @@ div.change_link{
 /******************************************************************/
 /*The codes below are for styling the Offer-ride page*/
 /******************************************************************/
+#profile {
+  border: 1px solid;
+  background: rgb(29, 162, 193);
+  font-size: 23px;
+  font-weight: bold;
+}
+.wrap {
+  padding-top: 80px;
+  font-size: 20px;
+}
 
+.wrap input:not([type="checkbox"]) {
+  width: 92%;
+	margin-top: 4px;
+	padding: 10px 5px 10px 32px;
+	border: 1px solid rgb(178, 178, 178);
+	box-sizing : content-box;
+	border-radius: 3px;
+	box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
+  transition: all 0.2s linear;
+}
 
+#travel {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-container {
+  width: 50%;
+}
+
+#travel input {
+  width: 50%;
+}
+
+.offer {
+  border:20px solid #bdc3c7;
+	width: 50%;
+	margin:20px auto;
+	padding: 20px;
+}
+
+.wrap div.button input {
+  width: 98%;
+	cursor: pointer;
+	background: rgb(29, 162, 193);
+	padding: 8px 5px;
+	font-family: 'Arial Narrow';
+	color: #fff;
+	font-size: 20px;
+	border: 1px solid rgb(28, 108, 122);
+	margin-bottom: 10px;
+  border-radius: 3px;
+  box-sizing : content-box;
+	box-shadow:
+		0px 1px 6px 4px rgba(0, 0, 0, 0.07) inset,
+		0px 0px 0px 3px rgb(254, 254, 254),
+		0px 5px 3px 3px rgb(210, 210, 210);
+	transition: all 0.2s linear;
+}
 
 /* footer */
 footer {
