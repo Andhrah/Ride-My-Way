@@ -20,4 +20,20 @@ router.get('/rides/:id', (req, res) => {
   res.json(ride);
 });
 
+// New - create new ride
+router.post('/rides', (req, res) => {
+  const { from, to, departure } = req.body;
+  const lastRide = db[db.length - 1];
+  const newRide = {
+    id: lastRide.id + 1,
+    from,
+    to,
+    departure,
+  };
+  db.push(newRide);
+  res.json({
+    message: 'Ride offer created successfully.',
+  });
+});
+
 export default router;
