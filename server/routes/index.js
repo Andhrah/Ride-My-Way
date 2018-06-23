@@ -57,8 +57,12 @@ router.post('/rides/:id/requests', (req, res) => {
   };
   requestDb.push(newRequest);
   res.json({
-    message: 'request made successfully.',
+    message: 'Request made successfully.',
   });
+});
+
+router.get('/requests', (req, res) => {
+  res.json(requestDb);
 });
 
 export default router;
