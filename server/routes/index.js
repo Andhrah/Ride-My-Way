@@ -1,5 +1,7 @@
 import express from 'express';
 import db from '../data/rides';
+import requestDb from '../data/requests';
+import userDb from '../data/users';
 
 const router = express.Router();
 
@@ -33,6 +35,29 @@ router.post('/rides', (req, res) => {
   db.push(newRide);
   res.json({
     message: 'Ride offer created successfully.',
+  });
+});
+
+router.post('/rides/:id/requests', (req, res) => {
+  const user = userDb.find(userFromDb => userFromDb.id === Number(req.body.user_id));
+  const ride = db.find(rideFromDb => rideFromDb.id === Number(req.params.id));
+  if (!user) {
+    return res.status(404).json({
+      message: 'A user with that id was not found.',
+    });
+  }
+  if (!ride) {
+    return res.status(404).json({
+      message: 'A ride with that id was not found.',
+    });
+  }
+  const newRequest = {
+    ride_id: req.params.id,
+    user_id: req.body.user_id,
+  };
+  requestDb.push(newRequest);
+  res.json({
+    message: 'request made successfully.',
   });
 });
 
