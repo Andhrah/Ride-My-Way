@@ -1,6 +1,6 @@
 # Ride-My-Way
 
-[![Build Status](https://travis-ci.org/coderprincess/Ride-My-Way.svg?branch=master)](https://travis-ci.org/coderprincess/Ride-My-Way)
+[![Build Status](https://travis-ci.org/coderprincess/Ride-My-Way.svg?branch=develop)](https://travis-ci.org/coderprincess/Ride-My-Way)
 
 ## Application Overview
 Ride-my App is a carpooling application that provides drivers with the ability to create ride offers
