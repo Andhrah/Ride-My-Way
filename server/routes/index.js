@@ -19,7 +19,7 @@ router.get('/rides/:id', (req, res) => {
       message: 'Ride not found',
     });
   }
-  res.json(ride);
+  res.status(200).json(ride);
 });
 
 // New - create new ride
@@ -33,7 +33,7 @@ router.post('/rides', (req, res) => {
     departure,
   };
   db.push(newRide);
-  res.json({
+  res.status(201).json({
     message: 'Ride offer created successfully.',
   });
 });
@@ -42,7 +42,7 @@ router.post('/rides/:id/requests', (req, res) => {
   const user = userDb.find(userFromDb => userFromDb.id === Number(req.body.user_id));
   const ride = db.find(rideFromDb => rideFromDb.id === Number(req.params.id));
   if (!user) {
-    return res.status(404).json({
+    return res.status(201).json({
       message: 'A user with that id was not found.',
     });
   }
@@ -56,13 +56,13 @@ router.post('/rides/:id/requests', (req, res) => {
     user_id: req.body.user_id,
   };
   requestDb.push(newRequest);
-  res.json({
+  res.status(201).json({
     message: 'Request made successfully.',
   });
 });
 
 router.get('/requests', (req, res) => {
-  res.json(requestDb);
+  res.status(200).json(requestDb);
 });
 
 export default router;
