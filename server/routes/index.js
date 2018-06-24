@@ -42,7 +42,7 @@ router.post('/rides/:id/requests', (req, res) => {
   const user = userDb.find(userFromDb => userFromDb.id === Number(req.body.user_id));
   const ride = db.find(rideFromDb => rideFromDb.id === Number(req.params.id));
   if (!user) {
-    return res.status(201).json({
+    return res.status(401).json({
       message: 'A user with that id was not found.',
     });
   }
