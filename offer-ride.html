@@ -8,26 +8,31 @@
   <meta name="author" content="Ruth Nnochiri">
   <title>Ride My Way | Offer a ride </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/styles.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/main.css" />
 </head>
 
 <body>
-  <nav>
+  <div class="home-nav">
+    <nav class="home-navbar">
       <div class="brand">
-          <h2>Ride My Way</h2>
+        <h2>
+          <a href="index.html">Ride My Ride</a>
+        </h2>
       </div>
       <ul>
         <li>
-          <a href="index.html">Home</a>
+          <a href="available-ride.html">Find a Ride</a>
         </li>
         <li>
-          <a href="#">About Us</a>
+          <a href="offer-ride.html">Offer a ride</a>
         </li>
-        <li id="profile">
-          <a href="profile.html"><i>Ruth</i></a>
+        <li>
+          <a href="profile.html">Princess</a>
         </li>
       </ul>
-  </nav>
+    </nav>
+  </div>
     
   <div class="wrap">
     <div class="offer">
@@ -43,11 +48,11 @@
         </div>
         <div id="travel" class="input-container">
           <div class="flex-container">
-              <label for="date">Travel Date</label>
+              <label for="date">Departure Date</label>
               <input id="date" name="date" required="required" type="date" />
           </div>
           <div class="flex-container">
-              <label for="time">Travel Time</label>
+              <label for="time">Departure Time</label>
               <input id="time" name="emailsignup" required="required" type="time" />
           </div>
           </div>
