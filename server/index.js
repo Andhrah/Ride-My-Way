@@ -7,6 +7,10 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const pool = new Pool({
+  connectionString,
+});
+
 app.use('/api/v1', router);
 
 app.listen(process.env.PORT || 3000, () => {
