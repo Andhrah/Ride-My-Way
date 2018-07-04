@@ -1,15 +1,11 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import router from './routes';
-import Pool from '../server/models/connectDb';
+import db from '../server/models/user';
 
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
-
-const pool = new Pool({
-  connectionString,
-});
 
 app.use('/api/v1', router);
 
