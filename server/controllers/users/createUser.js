@@ -1,4 +1,5 @@
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 import db from '../../models/connect';
 
 const newUser = (req, res) => {
@@ -19,20 +20,33 @@ const newUser = (req, res) => {
     }
     bcrypt.hash(password, 10)
       .then((hash) => {
-        const insertText = 'INSERT INTO Users(fullname, email, password) values($1,$2, $3)';
+        const insertText = 'INSERT INTO Users(fullname, email, password) values($1, $2, $3)';
         const insertValue = [fullname, email, hash];
         db.query(
           insertText, insertValue,
           (error) => {
             if (error) {
               return res.status(400).json({
-                message: 'Sorry an error occured',
+                message: 'Invalide user input',
               });
             }
-            return res.status(201).json({
-              message: 'User created sucessfully',
+            // generate token for user
+            // use userid to generate token
+            db.query('SELECT * FROM Users WHERE email = $1', [email], (e, result) => {
+              if (e) {
+                return res.status(400).json({
+                  message: 'Sorry an error occured',
+                });
+              }
+
+              const userId = result.rows[0].id;
+              const token = jwt.sign({ userId }, process.env.SECRET_KEY, { expiresIn: '4 hours' });
+              return res.status(201).json({
+                message: 'User created sucessfully',
+                token,
+              });
+              db.end();
             });
-            db.end();
           },
         );
       });
