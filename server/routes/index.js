@@ -16,4 +16,6 @@ router.post('/rides/:id/requests', controllers.createRideRequest);
 
 router.get('/requests', controllers.getRideRequests);
 
+router.post('/auth/signup', controllers.newUser);
+
 export default router;
