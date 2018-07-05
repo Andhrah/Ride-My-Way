@@ -18,4 +18,6 @@ router.get('/requests', controllers.getRideRequests);
 
 router.post('/auth/signup', controllers.newUser);
 
+router.post('/auth/login', controllers.signin);
+
 export default router;

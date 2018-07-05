@@ -15,7 +15,7 @@ const newUser = (req, res) => {
   db.connect((err) => {
     if (err) {
       return res.status(500).json({
-        message: 'could not connect to the server', err,
+        message: 'Could not connect to the server', err,
       });
     }
     bcrypt.hash(password, 10)

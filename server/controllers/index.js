@@ -4,6 +4,7 @@ import createRide from './rides/createRide';
 import createRideRequest from './rides/joinRide';
 import getRideRequests from './rides/getRideRequest';
 import newUser from './users/createUser';
+import signin from './users/signinUser';
 
 
 export default {
@@ -13,4 +14,5 @@ export default {
   createRideRequest,
   getRideRequests,
   newUser,
+  signin,
 };
